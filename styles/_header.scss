@@ -1,0 +1,90 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'placeholders' as p;
+@use 'sass:color';
+
+.header__section {
+    background-color: color.adjust(v.$color__white, $alpha: -0.85);
+ border-bottom: 1px solid v.$color__white;
+    .header {
+       
+        height: 52px;
+        @include m.d-flex(start, center, nowrap, row, 0, 0);
+
+        &__cloud {
+
+            border-right: 1px solid v.$color__white;
+            height: 100%;
+            width: 164px;
+            @include m.d-flex(start, center, nowrap, row, 0, 0);
+
+            &-title {
+                &:hover {
+                    @extend %hover-black;
+                }
+
+                @include m.font(25px, 500, v.$color__white);
+            }
+        }
+
+        &__links {
+
+            flex-grow: 1;
+
+            &-list {
+                @include m.d-flex(space-around, center, nowrap, row, 0, 0);
+                max-width: 300px;
+                width: 100%;
+
+                .header__links-link {
+                    &:hover {
+                        @extend %hover-black;
+                    }
+
+                    @include m.font(22px, 400, v.$color__white);
+                }
+            }
+
+
+            @media (max-width:p.$media_lg) {
+                @include m.d-flex(center, center, nowrap, row, 0, 0);
+            }
+
+            @media (max-width:p.$media_md) {
+                display: none;
+            }
+
+        }
+
+        &__covid {
+            height: 100%;
+            @include m.d-flex(space-between, center, nowrap, row, 10px, 0);
+
+            &-title {
+                width: 200px;
+                height: 100%;
+                border-right: 1px solid v.$color__white;
+                border-left: 1px solid v.$color__white;
+                @include m.font(16px, 700, v.$color__white);
+                @include m.d-flex(center, center, nowrap, row, 10px, 0);
+
+                &:hover {
+                    @extend %hover-black;
+                }
+            }
+
+            &-icon {
+                width: 27px;
+                height: 29px;
+
+                &:hover {
+                    @extend %hover-black-icon;
+                }
+            }
+
+            @media (max-width:p.$media_md) {
+                display: none;
+            }
+        }
+    }
+}
