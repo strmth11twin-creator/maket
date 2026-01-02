@@ -1,0 +1,165 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'placeholders' as p;
+@use 'sass:color';
+
+.work {
+    padding: 100px 0 100px 0;
+
+    @media(max-width:p.$media_sm) {
+        padding: 0 0 100px 0;
+    }
+
+    &__title {
+        @include m.font(60px, 400, v.$color__white);
+        text-align: center;
+        margin: 0 0 100px 0;
+
+        @media(max-width:p.$media_md) {
+            @include m.font(45px, 400, v.$color__white);
+        }
+    }
+
+    &__cards {
+        margin: 0 auto;
+        max-width: 950px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        row-gap: 65px;
+        justify-items: center;
+        align-items: center;
+        grid-template-areas:
+            "anlysis design development"
+            "maintenance testing integration"
+        ;
+
+        .anlysis {
+            grid-area: anlysis;
+            justify-self: start;
+        }
+
+        .design {
+            grid-area: design;
+            justify-self: center;
+        }
+
+        .development {
+            grid-area: development;
+            justify-self: end;
+        }
+
+        .maintenance {
+            grid-area: maintenance;
+            justify-self: start;
+        }
+
+        .testing {
+            grid-area: testing;
+            justify-self: center;
+        }
+
+        .integration {
+            grid-area: integration;
+            justify-self: end;
+        }
+
+        &-card {
+            padding: 0 10px;
+            @include m.d-flex(center, center, nowrap, column, 0, 6px);
+            border-radius: 20px;
+            width: 180px;
+            height: 193px;
+            background-color: color.adjust(v.$color__white, $alpha: -0.85);
+
+            &:hover {
+                background-color: color.adjust(v.$color__white, $alpha: -0.65);
+                cursor: pointer;
+                scale: 1.1;
+                box-shadow: 5px 5px 7px rgba(0,0,0,.15);
+                .card__title {
+                    color: v.$color__white;
+                }
+
+                .card__description {
+                    color: v.$color__white;
+                }
+
+                .card__icon {
+                   fill: v.$color__white;
+                }
+            }
+
+            .card__icon {
+                width: 55px;
+                height: 53px;
+            }
+
+            .card__title {
+                @include m.font(18px, 500, v.$color__black);
+            }
+
+            .card__description {
+                text-align: center;
+                max-width: 155px;
+                @include m.font(16px, 300, v.$color__black);
+            }
+
+            @media(max-width:p.$media_min) {
+                width: 140px;
+                height: 152px;
+
+                .card__title {
+                    @include m.font(14px, 500, v.$color__black);
+                }
+
+                .card__description {
+                    text-align: center;
+                    max-width: 155px;
+                    @include m.font(11px, 300, v.$color__black);
+                }
+            }
+        }
+
+        @media(max-width:p.$media_md) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            row-gap: 35px;
+            grid-template-areas:
+                "development anlysis"
+                "design maintenance "
+                "integration testing "
+            ;
+
+            .anlysis {
+                grid-area: anlysis;
+                justify-self: center;
+            }
+
+            .design {
+                grid-area: design;
+                justify-self: center;
+            }
+
+            .development {
+                grid-area: development;
+                justify-self: center;
+            }
+
+            .maintenance {
+                grid-area: maintenance;
+                justify-self: center;
+            }
+
+            .testing {
+                grid-area: testing;
+                justify-self: center;
+            }
+
+            .integration {
+                grid-area: integration;
+                justify-self: center;
+            }
+        }
+    }
+}
