@@ -28,6 +28,10 @@
             height: 80px;
             color: v.$color__white;
             background-color: v.$color__black;
+            &:hover {
+                cursor: pointer;
+                opacity: 0.8;
+            }
         }
 
         @media(max-width:p.$media_xl) {
@@ -37,7 +41,6 @@
 
             &-button {
                 @include m.position(absolute, 1, -1, bottom, left, -100px, -180px);
-
                 @include m.font(28px, 500, v.$color__white);
 
             }
@@ -100,6 +103,10 @@
             border: none;
             width: 94px;
             height: 14px;
+            &:hover {
+                    cursor: pointer;
+                    color: v.$color__white;
+                }
         }
 
         @media(max-width:p.$media_md) {
