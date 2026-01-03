@@ -4,10 +4,11 @@
 @use 'sass:color';
 
 .about {
+    padding: 0 10px;
     &__quality {
         background: url(/assets/Images/image\ 9.png) 100% 100%/contain no-repeat;
         @include m.d-flex(start, start, nowrap, column, 0, 20px);
-
+       
         height: 380px;
         margin: 100px 0 100px 0;
 
@@ -69,7 +70,7 @@
     &__touch {
         position: relative;
         width: 100%;
-        padding: 0 0 0 15px;
+    
         height: 500px;
         text-align: right;
         @include m.d-flex(end, end, nowrap, column, 0, 20px);

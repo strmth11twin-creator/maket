@@ -1,0 +1,75 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'placeholders' as p;
+
+.form__section {
+    overflow: hidden;
+    position: relative;
+
+    .form {
+        @include m.d-flex(center, center, nowrap, row, 0, 0);
+        height: 700px;
+        padding: 0 10px;
+        &__content {
+            max-width: 623px;
+            width: 100%;
+            height: 375px;
+            @include m.d-flex(center, center, nowrap, column, 0, 20px);
+
+            &-label {
+                @include m.font(36px, 400, v.$color__black);
+
+                &:hover {
+                    cursor: pointer;
+                }
+
+                @media(max-width:p.$media_md) {
+                    @include m.font(25px, 400, v.$color__black);
+                }
+            }
+
+            &-name {
+                @include m.font(25px, 300, v.$color__grey);
+                border: 1px solid v.$color__grey;
+                border-radius: 20px;
+                height: 47px;
+                width: 100%;
+            }
+
+            &-button {
+                @include m.font(25px, 500, v.$color__white);
+                background-color: v.$color__black;
+                border: none;
+                border-radius: 20px;
+                height: 47px;
+                width: 100%;
+
+                &:hover {
+                    cursor: pointer;
+                    opacity: 0.8;
+                }
+            }
+        }
+    }
+
+    .cloud {
+        width: 700px;
+        height: 240px;
+
+        @media (max-width:p.$media_sm) {
+            width: 550px;
+            height: 200px;
+        }
+    }
+
+    .left-cloud {
+        @include m.position(absolute, 1, -1, top, left, -30px, -350px);
+        background: url(/assets/Images/облачко.png) center/contain no-repeat;
+    }
+
+    .right-cloud {
+        @include m.position(absolute, 1, -1, bottom, right, -30px, -320px);
+        background: url(/assets/Images/облачко.png) center/contain no-repeat;
+
+    }
+}
