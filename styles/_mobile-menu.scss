@@ -1,0 +1,57 @@
+@use 'variables' as v;
+@use 'mixins' as m;
+@use 'placeholders' as p;
+@use 'sass:color';
+
+.mobile-menu {
+    display: none;
+    overflow: hidden;
+    &__icon {
+        width: 33px;
+        height: 18px;
+        stroke: v.$color__white;
+        @include m.position(absolute, 1, -1, top, right, 15px, 15px);
+        &:hover {
+            stroke: v.$color__black;
+        }
+    }
+    &__input {
+        display: none;
+
+        &:checked + .mobile-menu__navigation {
+            translate: 0 ;
+        }
+    }
+        &__navigation {
+            padding: 100px 0 0 10px;
+            @include m.position(fixed, 999, 0,);
+            background-color:color.adjust(v.$color__black, $alpha: -0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            translate: 100% 0;
+            transition: translate .22s;
+            &-list {
+                @include m.d-flex(start, start, nowrap, column, 0, 20px);
+                .mobile-menu__navigation-list--item {
+                    text-shadow: 2px 2px 3px rgba(0,0,0,.3);
+                    @include m.font(36px, 400, v.$color__white);
+                }
+            }
+            &-close { 
+                @include m.position(absolute, 10, -1, top, right, 13px, 20px);
+                .mobile-menu__navigation-close--icon {
+                width:25px;
+                    height: 22px;
+                    stroke: v.$color__white;
+                    @include m.position(absolute, 1, -1, top, right, 5px, 15px);
+                
+                    &:hover {
+                        stroke: v.$color__black;
+                    }
+                }
+            }
+        }
+    @media(max-width:p.$media_md){
+        display: block;
+    }
+}

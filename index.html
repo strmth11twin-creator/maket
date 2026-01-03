@@ -39,8 +39,48 @@
             </div>
         </div>
     </header>
+
+    <div class="mobile-menu">
+        <label for="checkboxID">
+            <svg class="mobile-menu__icon">
+                <use href="assets/spryties.svg#burger"></use>
+            </svg>
+        </label>
+
+        <input type="checkbox" id="checkboxID" class="mobile-menu__input">
+
+        <nav class="mobile-menu__navigation">
+            <ul class="mobile-menu__navigation-list">
+                <li class="mobile-menu__navigation-list--item">
+                    <a href="#hero" class="">HERO</a>
+                </li>
+                <li class="mobile-menu__navigation-list--item">
+                    <a href="#work" class="">WORK</a>
+                </li>
+                <li class="mobile-menu__navigation-list--item">
+                    <a href="#about" class="">ABOUT</a>
+                </li>
+                <li class="mobile-menu__navigation-list--item">
+                    <a href="#testimonials" class="">TESTIMONIALS</a>
+                </li>
+                <li class="mobile-menu__navigation-list--item">
+                    <a href="#form" class="">FORM</a>
+                </li>
+                <li class="mobile-menu__navigation-list--item">
+                    <a href="#footer" class="">FOOTER</a>
+                </li>
+            </ul>
+
+            <label for="checkboxID" class="mobile-menu__navigation-close">
+                <svg class="mobile-menu__navigation-close--icon">
+                    <use href="assets/spryties.svg#cross"></use>
+                </svg>
+            </label>
+        </nav>
+    </div>
+
     <main>
-        <section class="hero__section">
+        <section class="hero__section" id="hero">
             <div class="container">
                 <div class="hero">
                     <div class="hero__content">
@@ -61,7 +101,7 @@
             </div>
         </section>
 
-        <section class="work__section">
+        <section class="work__section" id="work">
             <div class="container">
                 <div class="work">
                     <h2 class="work__title">How we work</h2>
@@ -119,7 +159,7 @@
             </div>
         </section>
         <hr>
-        <section class="about__section">
+        <section class="about__section" id="about">
             <div class="container">
                 <div class="about">
                     <div class="about__quality">
@@ -146,7 +186,7 @@
             </div>
         </section>
         <hr>
-        <section class="experience__section">
+        <section class="experience__section" id="experience">
             <div class="container">
                 <div class="experience">
                     <h3 class="experience__title">Our experience</h3>
@@ -183,7 +223,7 @@
                 </div>
             </div>
         </section>
-        <section class="testimonials__section">
+        <section class="testimonials__section" id="testimonials">
             <div class="container">
                 <div class="testimonials">
                     <h2 class="testimonials__title">Testimonials</h2>
@@ -221,7 +261,7 @@
                 </div>
             </div>
         </section>
-        <section class="form__section">
+        <section class="form__section" id="form">
             <div class="container">
                 <div class="form">
                     <form action="" class="form__content">
@@ -239,7 +279,7 @@
         </section>
     </main>
 
-    <footer class="footer__section">
+    <footer class="footer__section" id="footer">
         <div class="container">
             <div class="footer">
                 <div class="footer__content">
